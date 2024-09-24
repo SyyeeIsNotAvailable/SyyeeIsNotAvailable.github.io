@@ -1,15 +1,52 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>・Syyee</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <nav>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syyee</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="scene">
+        <div class="cube">
+            <div class="face front">
+                <p>Face 1</p>
+            </div>
+            <div class="face back">
+                <p>Face 2</p>
+            </div>
+            <div class="face right">
+                <p>Face 3</p>
+            </div>
+            <div class="face left">
+                <p>Face 4</p>
+            </div>
+            <div class="face top">
+                <p>Face 5</p>
+            </div>
+            <div class="face bottom">
+                <p>Face 6</p>
+            </div>
+        </div>
+    </div>
 
-        </nav>
-        <p>website in progress</p>
-    </body>
+    <script>
+        let cube = document.querySelector('.cube');
+        let scrollPosition = 0;
+
+        window.addEventListener('scroll', () => {
+            let newScrollPosition = window.scrollY;
+            let delta = newScrollPosition - scrollPosition;
+
+            // Ajuster les calculs pour une rotation plus lente et synchronisée
+            let rotateX = (newScrollPosition / window.innerHeight) * 360 * 0.75; // Rotation complète sur la hauteur de la fenêtre
+            let rotateY = (newScrollPosition / window.innerWidth) * 360 * 0.75;  // Rotation complète sur la largeur de la fenêtre
+
+            cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            scrollPosition = newScrollPosition;
+        });
+    </script>
+</body>
 </html>
