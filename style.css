@@ -5,7 +5,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4000px; /* Augmenter la hauteur pour un défilement plus long */
+    height: 3050px; /* Augmenter la hauteur pour un défilement plus long */
     background-color: #000; /* Fond noir */
     color: #fff; /* Texte blanc pour contraste */
 }
@@ -45,3 +45,22 @@ body, html {
 .left   { transform: rotateY(-90deg) translateZ(100px); }
 .top    { transform: rotateX( 90deg) translateZ(100px); }
 .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+.clock {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 48px; /* Augmenté de 200% par rapport à 24px */
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+.github-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: white;
+}
+.github-icon img {
+    width: 48px;
+    height: 48px;
+}

@@ -8,6 +8,10 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <div class="clock" id="clock"></div>
+    <a href="https://github.com/SyyeeIsNotAvailable" class="github-icon" target="_blank">
+        <img src="https://github.com/fluidicon.png" alt="GitHub">
+    </a>
     <div class="scene">
         <div class="cube">
             <div class="face front">
@@ -30,23 +34,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        let cube = document.querySelector('.cube');
-        let scrollPosition = 0;
-
-        window.addEventListener('scroll', () => {
-            let newScrollPosition = window.scrollY;
-            let delta = newScrollPosition - scrollPosition;
-
-            // Ajuster les calculs pour une rotation plus lente et synchronisée
-            let rotateX = (newScrollPosition / window.innerHeight) * 360 * 0.75; // Rotation complète sur la hauteur de la fenêtre
-            let rotateY = (newScrollPosition / window.innerWidth) * 360 * 0.75;  // Rotation complète sur la largeur de la fenêtre
-
-            cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-
-            scrollPosition = newScrollPosition;
-        });
-    </script>
 </body>
 </html>
